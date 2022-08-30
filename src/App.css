@@ -1,0 +1,12 @@
+[data-theme='compact'] .site-collapse-custom-collapse .site-collapse-custom-panel,
+.site-collapse-custom-collapse .site-collapse-custom-panel {
+  margin-bottom: 20px;
+  background: #9febe9;
+  border: 0px;
+  border-radius: 5px;
+  
+}
+
+.site-collapse-custom-panel{
+  width:900px;
+}
