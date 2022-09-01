@@ -2,8 +2,8 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import {  CaretDownOutlined } from '@ant-design/icons';
 import { Collapse, Space,Button} from 'antd';
-import Tab from './components/Tab';
 import './App.css';
+import Addtab from './components/Addtab';
 
 const { Panel } = Collapse;
 
@@ -24,19 +24,19 @@ const App = () => (
       >
 
         <Panel header="Tab 1" key="1" className="site-collapse-custom-panel">
-          <Tab/>
+        <Addtab/>
         </Panel>
         
         <Panel header="Tab 2" key="2" className="site-collapse-custom-panel">
-          <Tab/>
+        <Addtab/>
         </Panel>
 
         <Panel header="Tab 3" key="3" className="site-collapse-custom-panel">
-           <Tab/>
+        <Addtab/>
         </Panel>
 
         <Panel header="Tab 4" key="4" className="site-collapse-custom-panel">
-           <Tab/>
+        <Addtab/>
         </Panel>
 
       </Collapse>
