@@ -4,14 +4,16 @@ import {  CaretDownOutlined } from '@ant-design/icons';
 import { Collapse, Space,Button} from 'antd';
 import './App.css';
 import FormA from './components/FormA';
-
- 
+import DataTable from './components/DataTable';
+import Tab1 from './components/Tab1';
+import Tab2 from './components/Tab2';
 const { Panel } = Collapse;
 
 
 
 const App = () => (
-
+  
+  
   <>
 <div>
     <Space  direction="horizontal" style={{width: '100%', justifyContent: 'center',marginTop:'80px'}}>
@@ -28,11 +30,11 @@ const App = () => (
         <FormA/>
         </Panel>
         
-        {/* <Panel header="Tab 2" key="2" className="site-collapse-custom-panel">
-        <FormA/>
+         <Panel header="Tab 2" key="2" className="site-collapse-custom-panel">
+         <FormA/>
         </Panel>
 
-        <Panel header="Tab 3" key="3" className="site-collapse-custom-panel">
+        {/*<Panel header="Tab 3" key="3" className="site-collapse-custom-panel">
         <FormA/>
         </Panel>
 
@@ -43,7 +45,12 @@ const App = () => (
       </Collapse>
       
     </Space>
+
     <Button style={{backgroundColor:'#9febe9',marginTop:'10px',marginLeft:'70%',borderRadius:'5px'}}>Submit</Button>
+      
+       <div>
+        <DataTable/>
+        </div> 
 </div>
 </>
 );
