@@ -9,14 +9,15 @@ function DataTable() {
 const [tab1data,setTab1Data]=useState([])
   
 useEffect(()=>{
-    const list=JSON.parse(localStorage.getItem('TabOnedata'))
-    if(list)
-    {
-        setTab1Data(list)
-        console.log(tab1data)
-    }
+    const list=JSON.parse(localStorage.getItem('data'))
+    // if(list)
+    // {
+    //     setTab1Data(list)
+    //     console.log(tab1data)
+    // }
+    setTab1Data(list)
     
-},[])
+})
 
   const columns=[
     {

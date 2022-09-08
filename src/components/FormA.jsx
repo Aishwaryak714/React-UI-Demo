@@ -1,9 +1,9 @@
 import React from 'react'
-import { Space, Form, Input, Button } from 'antd';
+import { Space,Form,Button } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import { useState} from 'react';
-import { v4 as uuidv4 } from 'uuid';
-
+import InputCmp from './InputCmp';
+import ButtonCmp from './ButtonCmp';
 
 
 // =======================================================================
@@ -20,11 +20,11 @@ function Addtab() {
 
 
   const handleChangeInput = (event, index) => {
-     const data = [...inputFields]
+    const data = [...inputFields]
     data[index][event.target.name] = event.target.value
     setInputFields(data);
-    localStorage.setItem('TabOnedata', JSON.stringify(inputFields))
-    
+    localStorage.setItem('data', JSON.stringify(inputFields))
+    console.log(inputFields)
   }
 
   const handleAddFields = (e) => {
@@ -63,57 +63,39 @@ function Addtab() {
                 }}
                 align="baseline"
               >
-                <Form.Item
-                  label="First Name"
-                >
-                  <Input
-                    placeholder="First name"
-                    required style={{ width: '120px' }}
-                    name='fname'
-                    value={form.fname}
-                    onChange={event => handleChangeInput(event, index)} />
+                
+                <InputCmp 
+                label="First Name" 
+                placeholder="First name"  
+                name='fname' 
+                value={form.fname}
+                onChange={event => handleChangeInput(event, index)}
+                />
 
-                </Form.Item>
+               <InputCmp 
+                label="Last Name" 
+                placeholder="Last  name"  
+                name='lname' 
+                value={form.lname}
+                onChange={event => handleChangeInput(event, index)}
+                />
 
-                <Form.Item
-                  label="Last Name"
+                <InputCmp 
+                label="City"
+                placeholder="City"  
+                name='city'
+                value={form.city}
+                onChange={event => handleChangeInput(event, index)}
+                />
 
+                <InputCmp 
+                label="Age"
+                placeholder="Age"  
+                name='age'
+                value={form.age}
+                onChange={event => handleChangeInput(event, index)}
+                />
 
-                >
-                  <Input placeholder="Last name"
-                    required
-                    style={{ width: '120px' }}
-                    name='lname'
-                    value={form.lname}
-                    onChange={event => handleChangeInput(event, index)} />
-
-                </Form.Item>
-
-                <Form.Item
-                  label="City"
-
-
-                >
-                  <Input required
-                    style={{ width: '120px' }}
-                    name='city'
-                    value={form.city}
-                    onChange={event => handleChangeInput(event, index)} />
-
-                </Form.Item>
-
-
-                <Form.Item
-                  label="Age"
-
-                >
-                  <Input required
-                    style={{ width: '120px' }}
-                    name='age'
-                    value={form.age}
-                    onChange={event => handleChangeInput(event, index)} />
-
-                </Form.Item>
                 &nbsp;&nbsp;&nbsp;
                 {<Button
                   type="danger"
@@ -128,15 +110,20 @@ function Addtab() {
 
         })}
         <Space direction='horizontal' style={{ marginLeft: '625px' }}>
+          
           <Button
-            type="dashed" style={{ width: '100px' }}
+            type="dashed" 
+            style={{ width: '100px' }}
             disabled={inputFields.length === 4}
             icon={<PlusOutlined />}
             onClick={handleAddFields}> Add field</Button>
 
           <Button type='submit'
             style={{ backgroundColor: 'white', color: 'black' }}
-          >Done</Button>
+           >Done</Button>
+        
+          {/* <ButtonCmp type='submit' style={{ backgroundColor: 'white', color: 'black' }} value='Done' onClick={null}/> */}
+
         </Space>
       </Form>
     </div>
